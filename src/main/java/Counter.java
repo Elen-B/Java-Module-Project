@@ -2,14 +2,9 @@ import java.util.Scanner;
 
 public class Counter {
     int personCount;
-    Order order;
-
-    Counter() {
-        order = new Order();
-    }
+    Order order = new Order();
 
     Counter(int aPersonCount) {
-        this();
         personCount = aPersonCount;
     }
 

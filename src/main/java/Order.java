@@ -2,13 +2,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Order {
-    Bill bill;
-    ArrayList<Dish> dishList;
-
-    Order() {
-        bill = new Bill();
-        dishList = new ArrayList<>();
-    }
+    Bill bill = new Bill();
+    ArrayList<Dish> dishList = new ArrayList<>();
 
     // добавить блюдо в заказ
     void addDish(Dish aDish) {
