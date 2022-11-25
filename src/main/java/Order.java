@@ -22,25 +22,24 @@ public class Order {
     }
 
     // создать список блюд заказа
-    public void inputDishList() {
-        Scanner scanner = new Scanner(System.in);
+    public void inputDishList(Scanner aScanner) {
         String sDishName, sDishPrice;
 
         do {
             do {
                 System.out.print("Введите непустое наименование блюда: ");
-                sDishName = scanner.next();
+                sDishName = aScanner.nextLine();
             } while (!Dish.isCorrectName(sDishName));
 
             while(true) {
                 System.out.print("Введите стоимость блюда в формате рубли.копейки: ");
-                sDishPrice = scanner.next();
+                sDishPrice = aScanner.nextLine();
                 if (Dish.isCorrectPrice(sDishPrice))
                     break;
                 System.out.println("Некорректная стоимость блюда");
             }
             addDish(new Dish(sDishName, Double.parseDouble(sDishPrice)));  // добавляем блюдо в заказ
             System.out.println("Добавим еще одно блюдо в заказ? Введите \"Завершить\", чтобы отказаться или любой символ, чтобы продолжить");
-        } while (!scanner.next().equalsIgnoreCase("завершить"));
+        } while (!aScanner.next().equalsIgnoreCase("завершить"));
     }
 }

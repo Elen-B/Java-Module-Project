@@ -14,13 +14,12 @@ public class Counter {
     }
 
     // получить допустимое количество гостей
-    public static int getPersonCount() {
-        Scanner scanner = new Scanner(System.in);
+    public static int getPersonCount(Scanner aScanner) {
         String sPersonCount;
 
         System.out.println("На сколько человек необходимо разделить счёт?");
         while (true) {
-            sPersonCount = scanner.next();
+            sPersonCount = aScanner.nextLine();
             if (!Utils.isInt(sPersonCount) || !checkPersonCount(Integer.parseInt(sPersonCount))) {
                 System.out.println("Введите целое число больше 1");
             } else {
